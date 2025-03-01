@@ -16,7 +16,7 @@
 
 
 
-_[Paper](https://openreview.net/pdf?id=UYcUpiULmT) |
+[Paper](https://openreview.net/pdf?id=UYcUpiULmT) |
 [GitHub](https://github.com/ExistentialRobotics/PNO) |
 [arXiv](https://arxiv.org/abs/2410.17547) |
 Published in ICLR 2025.
