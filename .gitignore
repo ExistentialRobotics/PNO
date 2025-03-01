@@ -1,0 +1,13 @@
+# Ignoring specific folders
+2D_Experiments/dataset/
+2D_Experiments/dump/
+3D_Experiments/dataset/
+3D_Experiments/trained_model/
+
+
+2D_Experiments/ablation/AblationStudy_EffectofDeepNorm/multgoal_dataset/
+2D_Experiments/ablation/AblationStudy_EffectofDeepNorm/singlegoal_dataset/
+2D_Experiments/ablation/AblationStudy_EffectofDeepNorm/mazes_15_2_3000.npz
+
+
+4D_experiments/dataset/
