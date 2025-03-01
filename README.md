@@ -11,8 +11,9 @@
 </div>
 
 # Planning Operator: Generalizable motion planning via operator learning
-
- <a href="#"><img alt="Main result from the paper" src="images/superResExampleNYC.pdf" width="100%"/></a>
+<div align="center">
+ <a href="#"><img alt="Main result from the paper" src="docs/media/mainResult.png" width="100%"/></a>
+</div>
 
 
 
