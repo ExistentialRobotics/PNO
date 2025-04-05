@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Planning Neural Operator: Generalizable Motion Planning via Operator Learning">
+  <meta name="keywords" content="Motion planning, neural operators, SciML">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Planning Neural Operator: Generalizable Motion Planning Via Operator Learning</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css" integrity="sha384-zh0CIslj+VczCZtlzBcjt5ppRcsAmDnRem7ESsYwWwg3m/OaJ2l4x7YBZl9Kxxib" crossorigin="anonymous">
+
+   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.js" integrity="sha384-Rma6DA2IPUwhNxmrB/7S3Tno0YY7sFu9WSYMCuulLhIqYSGZ2gKCJWIqhBWqMQfh" crossorigin="anonymous"></script>
+
+   <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous"
+        onload="renderMathInElement(document.body);"></script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">Planning Neural Operator (PNO): Generaliable Motion Planning via Operator Learning</h1>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">
+							<a href="https://www.sharathmatada.com/">Sharath Matada</a><sup>*1</sup>,</span>
+            <span class="author-block">
+              <a href="https://lukebhan.com">Luke Bhan</a><sup>*1</sup>,</span>
+            <span class="author-block">
+              <a href="https://yyshi.eng.ucsd.edu/">Yuanyuan Shi</a><sup>1</sup>,
+            </span>
+            <span class="author-block">
+              <a href="https://natanaso.github.io/">Nikolay Atanasov</a><sup>1</sup>,
+            </span>
+          </div>
+
+          <div class="is-size-5 publication-authors">
+            <span class="author-block"><sup>1</sup>University of California, San Diego,</span>
+						<span class="author-block"><sup>*</sup>Equal contribution</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- PDF Link. -->
+              <span class="link-block">
+                <a href="https://openreview.net/pdf?id=UYcUpiULmT"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+              <span class="link-block">
+                <a href="https://arxiv.org/abs/2410.17547"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                  </span>
+                  <span>arXiv</span>
+                </a>
+              </span>
+              <!-- Video Link. -->
+              <span class="link-block">
+                <a href="https://recorder-v3.slideslive.com/#/share?share=100013&s=5c5e0336-81d7-46c4-879f-7fe2641f30e2"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                  </span>
+                  <span>Video</span>
+                </a>
+              </span>
+              <!-- Code Link. -->
+              <span class="link-block">
+                <a href="https://github.com/ExistentialRobotics/PNO"
+                   class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                      <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                  </a>
+              </span>
+             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+            <img src="./static/images/mainResult.jpeg"
+                 alt="PNO discretization invariance image."
+								 class="main-image"/>
+      <h2 class="subtitle has-text-centered">
+				<span class="dnerf">Through the lens of PDEs, PNO enables discretization-invariant training and testing for learning optimal value functions for  motion planning. </span>
+      </h2>
+    </div>
+  </div>
+</section>
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+					In this work, we introduce a planning neural operator (PNO) for predicting the value function of a motion planning problem. We recast value function approximation as learning a single operator from the cost function space to the value function space, which is defined by an Eikonal partial differential equation (PDE). Therefore, our PNO model, despite being trained with a finite number of samples at coarse resolution, inherits the zero-shot super-resolution property of neural operators. We demonstrate accurate value function approximation at 16x the training resolution on the MovingAI lab’s 2D city dataset, compare with state-of-the-art neural value function predictors on 3D scenes from the iGibson building dataset and showcase optimal planning with 4-joint robotic manipulators. Lastly, we investigate employing the value function output of PNO as a heuristic function to accelerate motion planning. We show theoretically that the PNO heuristic is -consistent by introducing an inductive bias layer that guarantees our value functions satisfy the triangle inequality. With our heuristic, we achieve a 30% decrease in nodes visited while obtaining near optimal path lengths on the MovingAI lab 2D city dataset, compared to classical planning methods (A<sup>*</sup>, RRT<sup>*</sup>).
+					</p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+    <!-- Paper video. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Video</h2>
+        <div class="publication-video">
+					Add youtube video here
+          <iframe src="https://www.youtube.com"
+                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+  <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Approximating value functions</h2>
+			
+			<h3 class="title is-4"> 3D Learned Value Functions with super-resolution deployment</h3>
+
+			We learned the value functions for various building path planning problems in the <a src="https://stanfordvl.github.io/iGibson/dataset.html"> iGibson </a> dataset.
+			
+			<img src="./static/images/ntfields.jpeg"
+					 alt="3D value functions of PNO."
+					 class="center-image"/>
+			
+				</br>	
+			<h3 class="title is-4"> 4D Manipulator Motion Planning with PNO Learned Value Function </h3>
+			<video poster="" autoplay controls muted loop playsinline height="100%">
+				<source src=""
+								type="video/mp4">
+			</video>
+    </div>
+  </div>
+
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h3 class="title is-3">Employing PNO as a Neural Heuristic</h3>
+
+        <div class="content has-text-justified">
+          <p>
+					As <span class="dnerf">PNO</span> produces an estimate of the value function, one can deploy PNO as a neural heuristic in A<sup>*</sup> reducing the nodes explored compared to the Euclidean Norm.
+          </p>
+        </div>
+
+	<img src="./static/images/heuristic_comparison.jpg"
+									 alt="Comparison of heuristics using PNO image."
+									 class="main-image"/>
+	
+	<img src="./static/images/table.png"
+									 alt="Table results of PNO heuristics."
+									 class="main-image"/>
+							
+
+        <br/>
+
+        <!-- Re-rendering. -->
+        <h3 class="title is-3">Theoretical Guarentees</h3>
+        <div class="content has-text-justified">
+          <p>
+					As PNO is a neural operator, we guarentee the existence of a neural operator approximation to the optimal value function within any \(\epsilon>0\) tolerance. Namely, we introduce two main results (with a formal restating of one background result):
+          </p>
+
+					<h4 class="title is-5"> Background: The motion planning problem is equivalent to an Eikonal PDE	</h4>
+			
+					<p>
+					Consider the motion planning problem:
+					$$
+					\begin{align}
+					\min_{\pi} \;\;& c(x(\tau)) + \int_0^{\tau} c(x(t)) dt \,, \nonumber \\ 
+					\text{s.t. }& \tau = \inf\{t \in \mathbb{R}_{\geq 0} \mid x(t) \in \mathcal{G}\}\,, \nonumber \\
+					& \dot{x}(t) = \pi(x(t))\,, \; \bm{x}(0) = \bm{x}_0\,, \nonumber \\
+					& x(t) \in \mathcal{S}, \quad \|\pi(x(t))\| = 1 \quad \forall t \geq 0\,. \nonumber
+\end{align}
+				$$
+				where \(c\) is the cost function, \(x\) is the location or state taken values in a set \(\mathcal{S}\), \(\mathcal{G}\) is a set of goal states and \(\pi\) are the dynamics/controls of \(x\). 
+				</br>	
+				The value function of the motion planning problem is equivalent to solving the following Eikonal PDE:
+				$$
+				\begin{align}
+				\|\nabla V(x)\| &= c(x) \,, \quad \forall x \in \mathcal{S} \backslash \mathcal{G}\,,  \nonumber  \\ 
+				V(x) &= c(x) \,, \quad \forall x \in \mathcal{G} \nonumber\,.
+
+				\end{align}
+				$$
+					</p>
+	<h4 class="title is-5"> First result: Existence of an arbitrary neural operator approximation of the viscosity solution to the Eikonal PDE	</h4>
+	<p>
+	For any \(\epsilon > 0\), there exists a PNO approximation of the value function \(\hat{V}\) such that 
+	$$ 
+	\begin{align}
+	\sup_{x \in \mathcal{S}} \|V(x) - \hat{V}(x)\| <= \epsilon \,. \nonumber
+	\end{align}
+	$$
+	</p>
+
+
+	<h4 class="title is-5"> Second result: PNO Heuristics are \(\epsilon\)-consistent!	</h4>
+	<p>
+	Let \(V(x, g)\) now be the value function solving the Eikonal PDE when the goal is a single point. A \(\epsilon\)-consistent is any heuristic that satisfies \(h(x) \leq \epsilon V(x, y) + h(y)\) where \(y\) is any desired goal position.
+
+	</br>
+
+	Under the setting above, with operator approximation error \(\epsilon_{\text{NO}}\), the heuristic generated by PNO is \(\epsilon\) consistent where 
+	$$
+	\begin{align}
+	\epsilon = \max_{\{x, y \in \mathcal{S} \mid x \neq y\}} 1 + 2 \epsilon_{\text{NO}} / V(x, y)\nonumber \,.
+	\end{align}
+	$$
+
+	In other words, this result says that the paths gerenated by A<sup>*</sup> with the PNO heuristic are \(\epsilon\) close to the optimal path where \(\epsilon\) is only a function of the operator error and the max value of the value function. 
+	</p>
+        </div>
+      </div>
+    </div>
+    <!--/ Animation. -->
+
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+		If you found our work useful, we ask that you acknowledge our paper via the following citation:
+    <pre><code>@inproceedings{matada2025generalizable,
+title={Generalizable Motion Planning via Operator Learning},
+author={Sharath Matada and Luke Bhan and Yuanyuan Shi and Nikolay Atanasov},
+booktitle={The Thirteenth International Conference on Learning Representations},
+year={2025},
+url={https://openreview.net/forum?id=UYcUpiULmT}
+}
+</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+					This website is designed using the template by <a href="https://nerfies.github.io/">Nerfies</a>. 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
