@@ -12,7 +12,7 @@
 
 # Planning Operator: Generalizable motion planning via operator learning
 <div align="center">
- <a href="#"><img alt="Main result from the paper" src="docs/media/mainResult.png" width="100%"/></a>
+ <a href="#"><img alt="Main result from the paper" src="docs/static/images/mainResult.png" width="100%"/></a>
 </div>
 
 
