@@ -1,18 +1,18 @@
 <div align="center">
   <a href="http://erl.ucsd.edu/">
-    <img align="left" src="docs/media/erl.png" width="80" alt="erl">
+    <img align="left" src="docs/static/images/erl.png" width="80" alt="erl">
   </a>
   <a href="https://contextualrobotics.ucsd.edu/">
-    <img align="center" src="docs/media/cri.png" width="150" alt="cri">
+    <img align="center" src="docs/static/images/cri.png" width="150" alt="cri">
   </a>
   <a href="https://ucsd.edu/">
-    <img align="right" src="docs/media/ucsd.png" width="260" alt="ucsd">
+    <img align="right" src="docs/static/images/ucsd.png" width="260" alt="ucsd">
   </a>
 </div>
 
 # Planning Neural Operator: Generalizable motion planning via operator learning
 <div align="center">
- <a href="#"><img alt="Main result from the paper" src="docs/media/mainResult.png" width="100%"/></a>
+ <a href="#"><img alt="Main result from the paper" src="docs/static/images/mainResult.png" width="100%"/></a>
 </div>
 
 
