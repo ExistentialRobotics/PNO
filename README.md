@@ -62,7 +62,7 @@ where the hierarchy is given via bullets and the results folder has all of the m
 
 If you have any issues, feel free to create an issue in this github repo or email the authors. 
 
-# 3D iGibson Environments, 4D Manipulator and the Neural Heuristics Experiments
+# 3D iGibson Environments, 4D Manipulator and Neural Heuristics Experiments
 In this section, we show how to reproduce results of the Heuristics.
 We provide pre-trained models and the datasets used. We briefly describe on how the datasets were generated for each experiment.
 

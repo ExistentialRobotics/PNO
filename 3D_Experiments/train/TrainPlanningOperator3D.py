@@ -307,7 +307,7 @@ def smooth_chi(mask, dist, smooth_coef):
 if __name__ == '__main__':
     # define hyperparameters
     print("Started Script")
-    os.chdir("/mountvol/igib-dataset-160-5G")
+    os.chdir("/dataset/igib-dataset-160-5G")
 
     lrs = [3e-3]
     gammas = [0.6]
