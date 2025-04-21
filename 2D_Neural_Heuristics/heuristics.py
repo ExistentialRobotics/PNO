@@ -350,6 +350,8 @@ def testheuristiconmaps(starts, goals, maps, heuristic, plotresults=False, print
 
     numofmaps = maps.shape[0]
     erosion = kwargs.get('erosion', None)  # Get the erosion value if passed in kwargs
+    if erosion is not None:
+        assert( 1 <= erosion) #Erosion function works only for values equal to and above 1
     heuristic_name = heuristic.__name__  # Get the name of the heuristic function
 
     for start, goal, map in zip(starts, goals, 1 - maps):
@@ -397,14 +399,12 @@ def testheuristiconmaps(starts, goals, maps, heuristic, plotresults=False, print
     # Calculate averages
     avgpathcost = totpathcost / numofmaps
     avgplantime = totplantime / numofmaps
-    avginfertime = totinfertime / numofmaps
     avgnodesexp = totnodesexp / numofmaps
     avgsuccessrate = succcount / numofmaps
 
     if printvalues:
         print('Average Path Cost:', avgpathcost, 
               '\nAverage Planning Time:', avgplantime,
-              '\nAverage Inference Time:', avginfertime, 
               '\nAverage Number of Node Expansions:', avgnodesexp,
               '\nAverage Success Rate:', avgsuccessrate)
 
