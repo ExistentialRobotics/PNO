@@ -1,4 +1,5 @@
 # Ignoring specific folders
+**/dataset/
 
 
 # Ignore all Python bytecode caches
