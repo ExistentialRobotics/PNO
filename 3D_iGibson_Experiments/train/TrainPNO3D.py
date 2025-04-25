@@ -196,9 +196,9 @@ class SpectralConv3d(nn.Module):
         return x
 
 
-class PlanningOperator3D(nn.Module):
+class PNO3D(nn.Module):
     def __init__(self, modes1, modes2, modes3, width, nlayers):
-        super(PlanningOperator3D, self).__init__()
+        super(PNO3D, self).__init__()
 
         """
         The overall network. It contains 4 layers of the Fourier layer.
@@ -393,7 +393,7 @@ if __name__ == '__main__':
     
     print("Training Started")
     op_type = 'env160_m12_w32_l1_b5_lr3e-3_5g_30nov_2400'
-    res_dir = './planningoperator3D_%s' % op_type
+    res_dir = './PNO3D_%s' % op_type
     if not os.path.exists(res_dir):
         os.makedirs(res_dir)
 
@@ -430,7 +430,7 @@ if __name__ == '__main__':
                     ################################################################
                     myloss = LpLoss(size_average=False, d=3)
                     print("-" * 100)
-                    model = PlanningOperator3D(modes, modes, modes, width, nlayers).to(device)
+                    model = PNO3D(modes, modes, modes, width, nlayers).to(device)
 
                     # if torch.cuda.device_count() > 1:
                     #     model = nn.DataParallel(model)

@@ -1,7 +1,8 @@
 import torch
 import numpy as np
 import matplotlib.pyplot as plt
-from train.TrainPlanningOperator3D import smooth_chi, PlanningOperator3D
+from train.TrainPNO3D import smooth_chi, PNO3D
+
 
 def load_raw_data(data_dir, Ntotal):
     mask = np.load(f'{data_dir}/mask.npy')[:Ntotal]
@@ -67,7 +68,7 @@ def load_pno_model(
         device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     
     # Initialize the model
-    model = PlanningOperator3D(modes, modes, modes, width, nlayers)
+    model = PNO3D(modes, modes, modes, width, nlayers)
 
     # Load the checkpoint safely (weights only)
     state_dict = torch.load(ckpt_path, map_location=device, weights_only=True)
@@ -79,10 +80,6 @@ def load_pno_model(
 
     return model
 
-
-import matplotlib.pyplot as plt
-import torch
-import numpy as np
 
 def plot_model_output(model, data_loader, device, n_samples=1, slice_axis=2, contour_levels=10):
     """
